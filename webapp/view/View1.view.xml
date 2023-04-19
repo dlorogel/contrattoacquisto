@@ -1,0 +1,34 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout" controllerName="it.orogel.zcontrattoacquisto.controller.View1" displayBlock="true">
+    <Shell id="shell" appWidthLimited="false">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <VBox alignContent="Start" alignItems="Center">
+                        <HBox alignContent="End" alignItems="Center">
+                            <Label text="Carica File" labelFor="fileUploader" class="sapUiMediumMarginBegin"/>
+                            <u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" fileType="xlsx" tooltip="Carica File da Locale" uploadComplete="handleUploadComplete" typeMissmatch=".onFailedType" class="sapUiMediumMarginBeginEnd"/>
+                        </HBox>
+                        <HBox alignContent="End" alignItems="Center">
+                            <Button id="ScaricaTemplateDiCreazione" icon="sap-icon://download" text="Scarica Template Di Creazione" press="onScaricaTemplateDiCreazione" class="sapUiMediumMarginBeginEnd">
+                            </Button>
+                            <Button id="CaricaTemplateDiCreazione" icon="sap-icon://upload" text="Carica Template Di Creazione" press="onCaricaTemplateDiCreazione" class="sapUiMediumMarginBeginEnd">
+                            </Button>
+                        </HBox>
+                        <HBox alignContent="End" alignItems="Center">
+                            <Button id="ScaricaTemplateDiModifica" icon="sap-icon://download" text="Scarica Template Di Modifica" press="onScaricaTemplateDiModifica" class="sapUiMediumMarginBeginEnd">
+                            </Button>
+                            <Button id="CaricaTemplateDiModifica" icon="sap-icon://upload" text="Carica Template Di Modifica" press="onCaricaTemplateDiModifica" class="sapUiMediumMarginBeginEnd">
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

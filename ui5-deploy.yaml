@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: it.orogel.zcontrattoacquisto
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4HANA
+          url: http://orogeldev:44333
+        app:
+          name: ZCONTRACQUISTO
+          description: Creazione Aggiornamento massivo contratto d'acquisto
+          package: Z001
+          transport: SODK904030
